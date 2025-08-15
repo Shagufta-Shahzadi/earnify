@@ -318,7 +318,55 @@
   margin: 0 auto;
   padding: 0 30px;
   width: 100%;
-  margin-left: 100px;
+  /* Remove the fixed margin-left that's causing issues */
+  /* margin-left: 100px; */
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 768px) {
+  .modern-hero-section {
+    padding: 20px 0 10px; /* Adjusted padding */
+    min-height: auto; /* Allow natural height */
+  }
+
+  .hero-container {
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr; /* Change to single column layout */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-left {
+    order: 1; /* Content first */
+  }
+
+  .hero-right {
+    order: 2; /* Image second */
+  }
+
+  .hero-title {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .hero-description {
+    font-size: 5px;
+    margin-bottom: 25px;
+    max-width: 100%;
+  }
+
+  .download-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Hero image adjustments */
+  .hero-image-container {
+    height: 250px;
+  }
 }
 
 .hero-content {
@@ -527,8 +575,9 @@
 
   /* Hero section adjustments - maintain left-right layout */
   .modern-hero-section {
-    padding: 20px 0 30px; /* Reduced from 80px */
-    min-height: 100vh;
+    padding: 90px 0 30px; /* Reduced padding */
+    min-height: auto; /* Remove fixed height */
+    margin-top: 0; /* Ensure it's at the top */
   }
 
   .hero-container {
@@ -555,7 +604,7 @@
   }
 
   .hero-description {
-    font-size: 10px;
+    font-size: 8px;
     margin-bottom: 25px;
     max-width: 100%;
   }
@@ -689,5 +738,47 @@
 
   .hero-image-container {
     height: 250px;
+  }
+}
+/* Make left side content smaller */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 20px; /* Reduced from 25px */
+    margin-bottom: 10px;
+  }
+
+  .hero-description {
+    font-size: 12px; /* Reduced from previous size */
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+
+  /* Make buttons smaller and arrange in one row */
+  .download-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5px; /* Reduced gap between buttons */
+    margin-top: 15px;
+  }
+
+  .download-btn img {
+    height: 20px; /* Smaller button size */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 18px;
+  }
+
+  .hero-description {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .download-btn img {
+    height: 28px; /* Even smaller for very small screens */
   }
 }

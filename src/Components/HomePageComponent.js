@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { DollarSign, TrendingUp, Gift, Smartphone } from 'lucide-react';
 import './HomePageComponent.css';
 import mockupImage from '../Assests/mobile-mockup.png';
-import taskVideo from '../Assests/1.mp4';
-import heroImage from '../Assests/banner image.png';
+import heroImage from '../Assests/banner 2.png';
 
 const HomePageComponent = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [visibleVideos, setVisibleVideos] = useState(0);
-  const [videoSectionInView, setVideoSectionInView] = useState(false);
 
   // Auto-cycle through steps
   useEffect(() => {
@@ -19,25 +16,6 @@ const HomePageComponent = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Videos appearance animation - only when section is in view
-  useEffect(() => {
-    if (!videoSectionInView) return;
-    
-    const videoInterval = setInterval(() => {
-      setVisibleVideos((prev) => {
-        if (prev < 4) {
-          return prev + 1;
-        } else {
-          // Stop the interval when all 4 videos are visible
-          clearInterval(videoInterval);
-          return prev;
-        }
-      });
-    }, 2000); // 2 seconds interval
-    
-    return () => clearInterval(videoInterval);
-  }, [videoSectionInView]);
-
   // Scroll animation effect
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,11 +23,6 @@ const HomePageComponent = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('HomePageComponent__animate--visible');
-            
-            // Check if this is the video section
-            if (entry.target.classList.contains('HomePageComponent__taskCategories')) {
-              setVideoSectionInView(true);
-            }
           }
         });
       },
@@ -149,38 +122,31 @@ const HomePageComponent = () => {
             Task Categories Preview
           </h2>
           
-          {/* Task Videos Row */}
+          {/* Task Mobile Mockups Row */}
           <div className="HomePageComponent__videosRow">
             {[
               { title: "Watch Ads", index: 1 },
               { title: "Surveys", index: 2 },
               { title: "Visit Sites", index: 3 },
               { title: "Download Apps", index: 4 }
-            ].map((video) => (
+            ].map((task) => (
               <div 
-                key={video.index}
-                className={`HomePageComponent__videoContainer ${
-                  visibleVideos >= video.index ? 'HomePageComponent__videoContainer--visible' : ''
-                }`}
+                key={task.index}
+                className="HomePageComponent__videoContainer"
               >
-                <h3 className="HomePageComponent__videoTitle">{video.title}</h3>
-                <video 
-                  className="HomePageComponent__taskVideo"
-                  controls
-                  autoPlay
-                  muted
-                  loop
-                >
-                  <source src={taskVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <h3 className="HomePageComponent__videoTitle">{task.title}</h3>
+                <img 
+                  src={mockupImage}
+                  alt={`${task.title} Mobile Mockup`}
+                  className="HomePageComponent__taskMockupImage"
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-          {/* CTA Section */}
+      {/* CTA Section */}
       <section className="HomePageComponent__ctaSection HomePageComponent__animate">
         <div className="HomePageComponent__container">
           <div className="HomePageComponent__ctaContent">
@@ -206,7 +172,8 @@ const HomePageComponent = () => {
             </div>
           </div>
         </div>
-      </section>  </div>
+      </section>
+    </div>
   );
 };
 
