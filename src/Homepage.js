@@ -4,6 +4,8 @@ import HomePageComponent from './Components/HomePageComponent';
 // Import your assets
 import heroImage from '../src/Assests/hero-image.png.png'; // Update path as needed
 import logo from '../src/Assests/logo.png.png'; // Update path as needed
+import TestimonialsAndTrust from './Components/TestimonialsAndTrust';
+import Footer from './Components/Footer';
 
 const Homepage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -198,6 +200,8 @@ const Homepage = () => {
       </section>
       
       <HomePageComponent/>
+      <TestimonialsAndTrust/>
+        <Footer/>
     </div>
   );
 };
