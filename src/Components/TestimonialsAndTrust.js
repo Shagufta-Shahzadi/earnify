@@ -18,7 +18,7 @@ const TestimonialsAndTrust = () => {
       location: "Karachi, Pakistan",
       review: "Simple tasks, real rewards. Love it! I can work whenever I have free time and earn extra income.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b332c3ed?w=150&h=150&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
     },
     {
       id: 3,
