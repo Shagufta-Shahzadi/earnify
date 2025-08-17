@@ -1,5 +1,5 @@
 /* Footer Styles */
-.custom-footer {
+.footer-custom-footer {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: #ffffff;
   padding: 60px 0 0;
@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.custom-footer::before {
+.footer-custom-footer::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -209,17 +209,17 @@
   background: linear-gradient(45deg, #64b5f6, #42a5f5, #2196f3);
   color: #ffffff;
   border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-size: 14px;
+  padding: 8px 56px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: auto;
 }
 
 .footer-contact-btn::before {
@@ -246,14 +246,14 @@
 }
 
 /* Contact Information */
-.contact-info {
+.footer-contact-info {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: -10px;
 }
 
-.contact-item {
+.footer-contact-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -261,16 +261,16 @@
   transition: all 0.3s ease;
 }
 
-.contact-item:hover {
+.footer-contact-item:hover {
   transform: translateX(3px);
 }
 
-.contact-icon {
+.footer-contact-icon {
   color: #64b5f6;
   min-width: 16px;
 }
 
-.contact-text {
+.footer-contact-text {
   color: #b0bec5;
   font-size: 14px;
   margin: 0;
@@ -297,7 +297,7 @@
 }
 
 /* Modal Styles */
-.modal-overlay {
+.footer-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -309,10 +309,10 @@
   justify-content: center;
   z-index: 1000;
   padding: 20px;
-  animation: fadeIn 0.3s ease;
+  animation: footerFadeIn 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes footerFadeIn {
   from {
     opacity: 0;
   }
@@ -321,7 +321,7 @@
   }
 }
 
-.modal-content {
+.footer-modal-content {
   background-color: #ffffff;
   border-radius: 12px;
   max-width: 500px;
@@ -329,10 +329,10 @@
   max-height: 90vh;
   overflow: auto;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  animation: slideIn 0.3s ease;
+  animation: footerSlideIn 0.3s ease;
 }
 
-@keyframes slideIn {
+@keyframes footerSlideIn {
   from {
     transform: translateY(-30px);
     opacity: 0;
@@ -343,7 +343,7 @@
   }
 }
 
-.modal-header {
+.footer-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -351,14 +351,14 @@
   border-bottom: 1px solid #eee;
 }
 
-.modal-title {
+.footer-modal-title {
   margin: 0;
   color: #333;
   font-size: 24px;
   font-weight: 600;
 }
 
-.close-button {
+.footer-close-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -368,21 +368,21 @@
   color: #666;
 }
 
-.close-button:hover {
+.footer-close-button:hover {
   background-color: #f5f5f5;
   color: #333;
 }
 
 /* Review Form Styles */
-.review-form {
+.footer-review-form {
   padding: 20px;
 }
 
-.rating-section {
+.footer-rating-section {
   margin-bottom: 20px;
 }
 
-.form-label {
+.footer-form-label {
   display: block;
   margin-bottom: 8px;
   color: #333;
@@ -390,26 +390,26 @@
   font-size: 14px;
 }
 
-.stars-container {
+.footer-stars-container {
   display: flex;
   gap: 5px;
   margin-top: 10px;
 }
 
-.star {
+.footer-star {
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.star:hover {
+.footer-star:hover {
   transform: scale(1.1);
 }
 
-.form-group {
+.footer-form-group {
   margin-bottom: 20px;
 }
 
-.form-input {
+.footer-form-input {
   width: 100%;
   padding: 12px;
   border: 2px solid #e0e0e0;
@@ -420,13 +420,13 @@
   font-family: inherit;
 }
 
-.form-input:focus {
+.footer-form-input:focus {
   border-color: #64b5f6;
   outline: none;
   box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
 }
 
-.form-textarea {
+.footer-form-textarea {
   width: 100%;
   padding: 12px;
   border: 2px solid #e0e0e0;
@@ -439,20 +439,20 @@
   min-height: 100px;
 }
 
-.form-textarea:focus {
+.footer-form-textarea:focus {
   border-color: #64b5f6;
   outline: none;
   box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
 }
 
-.form-buttons {
+.footer-form-buttons {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
   margin-top: 30px;
 }
 
-.cancel-button {
+.footer-cancel-button {
   padding: 12px 24px;
   border: 2px solid #ddd;
   background-color: #fff;
@@ -464,12 +464,12 @@
   transition: all 0.3s ease;
 }
 
-.cancel-button:hover {
+.footer-cancel-button:hover {
   border-color: #bbb;
   background-color: #f5f5f5;
 }
 
-.submit-button {
+.footer-submit-button {
   padding: 12px 24px;
   border: none;
   background: linear-gradient(45deg, #64b5f6, #42a5f5, #2196f3);
@@ -481,12 +481,12 @@
   transition: all 0.3s ease;
 }
 
-.submit-button:hover:not(:disabled) {
+.footer-submit-button:hover:not(:disabled) {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
 }
 
-.submit-button:disabled {
+.footer-submit-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
@@ -505,22 +505,22 @@
     gap: 20px;
   }
   
-  .modal-content {
+  .footer-modal-content {
     margin: 10px;
     max-width: calc(100vw - 20px);
   }
   
-  .form-buttons {
+  .footer-form-buttons {
     flex-direction: column-reverse;
   }
   
-  .form-buttons button {
+  .footer-form-buttons button {
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .custom-footer {
+  .footer-custom-footer {
     padding: 40px 0 0;
   }
   
@@ -533,21 +533,21 @@
     font-size: 24px;
   }
   
-  .modal-header {
+  .footer-modal-header {
     padding: 15px;
   }
   
-  .modal-title {
+  .footer-modal-title {
     font-size: 20px;
   }
   
-  .review-form {
+  .footer-review-form {
     padding: 15px;
   }
 }
 
 /* Loading Animation for Submit Button */
-.submit-button.loading::after {
+.footer-submit-button.loading::after {
   content: '';
   width: 16px;
   height: 16px;
@@ -555,11 +555,11 @@
   border: 2px solid transparent;
   border-top-color: #ffffff;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: footerSpin 1s linear infinite;
   display: inline-block;
 }
 
-@keyframes spin {
+@keyframes footerSpin {
   from {
     transform: rotate(0deg);
   }
@@ -576,26 +576,21 @@
   outline-offset: 2px;
 }
 
-/* Smooth Transitions */
-* {
-  transition: all 0.3s ease;
-}
-
 /* Custom Scrollbar for Modal */
-.modal-content::-webkit-scrollbar {
+.footer-modal-content::-webkit-scrollbar {
   width: 6px;
 }
 
-.modal-content::-webkit-scrollbar-track {
+.footer-modal-content::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 3px;
 }
 
-.modal-content::-webkit-scrollbar-thumb {
+.footer-modal-content::-webkit-scrollbar-thumb {
   background: #64b5f6;
   border-radius: 3px;
 }
 
-.modal-content::-webkit-scrollbar-thumb:hover {
+.footer-modal-content::-webkit-scrollbar-thumb:hover {
   background: #42a5f5;
 }

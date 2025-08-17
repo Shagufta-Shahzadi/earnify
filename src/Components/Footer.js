@@ -13,7 +13,25 @@ const Footer = () => {
   });
 
   const handleNavigation = (page) => {
-    console.log(`Navigating to ${page}`);
+    // Define route mappings
+    const routes = {
+      'tasks': '/tasks',
+      'rewards': '/rewards', 
+      'referrals': '/referrals',
+      'leaderboard': '/leaderboard',
+      'About Us': '/about-us',
+      'contact': '/contact',
+      'privacy': '/privacy-policy', 
+      'terms': '/terms-conditions'
+    };
+
+    const route = routes[page];
+    if (route) {
+      window.location.href = route;
+    } else {
+      // Fallback: create a generic route
+      window.location.href = `/${page.toLowerCase()}`;
+    }
   };
 
   const handleInputChange = (e) => {
@@ -42,14 +60,14 @@ const Footer = () => {
   };
 
   const handleOverlayClick = (e) => {
-    if (e.target.className === 'modal-overlay') {
+    if (e.target.className === 'footer-modal-overlay') {
       handleCloseModal();
     }
   };
 
   return (
     <>
-      <footer className="custom-footer">
+      <footer className="footer-custom-footer">
         <div className="footer-container">
           
           {/* Left Section - Brand Info */}
@@ -117,10 +135,10 @@ const Footer = () => {
             <div className="footer-company">
               <h4 className="footer-links-title">Company</h4>
               <ul className="footer-links">
-                <li><button className="footer-link-btn" onClick={() => handleNavigation('about')}>About Us</button></li>
+                <li><button className="footer-link-btn" onClick={() => handleNavigation('AboutUs')}>About Us</button></li>
                 <li><button className="footer-link-btn" onClick={() => handleNavigation('contact')}>Contact</button></li>
-                <li><button className="footer-link-btn" onClick={() => handleNavigation('privacy')}>Privacy Policy</button></li>
-                <li><button className="footer-link-btn" onClick={() => handleNavigation('terms')}>Terms & Conditions</button></li>
+                <li><button className="footer-link-btn" onClick={() => handleNavigation('privacy-policy')}>Privacy Policy</button></li>
+                <li><button className="footer-link-btn" onClick={() => handleNavigation('term-condition')}>Terms & Conditions</button></li>
               </ul>
             </div>
           </div>
@@ -138,18 +156,18 @@ const Footer = () => {
               </button>
               
               {/* Contact Information */}
-              <div className="contact-info">
-                <div className="contact-item">
-                  <Mail size={16} className="contact-icon" />
-                  <span className="contact-text">support@earnify.com</span>
+              <div className="footer-contact-info">
+                <div className="footer-contact-item">
+                  <Mail size={16} className="footer-contact-icon" />
+                  <span className="footer-contact-text">support@earnify.com</span>
                 </div>
-                <div className="contact-item">
-                  <Phone size={16} className="contact-icon" />
-                  <span className="contact-text">+1 (555) 123-4567</span>
+                <div className="footer-contact-item">
+                  <Phone size={16} className="footer-contact-icon" />
+                  <span className="footer-contact-text">+1 (555) 123-4567</span>
                 </div>
-                <div className="contact-item">
-                  <MapPin size={16} className="contact-icon" />
-                  <span className="contact-text">New York, USA</span>
+                <div className="footer-contact-item">
+                  <MapPin size={16} className="footer-contact-icon" />
+                  <span className="footer-contact-text">New York, USA</span>
                 </div>
               </div>
             </div>
@@ -166,12 +184,12 @@ const Footer = () => {
 
       {/* Review Popup Modal */}
       {showReviewPopup && (
-        <div className="modal-overlay" onClick={handleOverlayClick}>
-          <div className="modal-content">
-            <div className="modal-header">
-              <h3 className="modal-title">Share Your Review</h3>
+        <div className="footer-modal-overlay" onClick={handleOverlayClick}>
+          <div className="footer-modal-content">
+            <div className="footer-modal-header">
+              <h3 className="footer-modal-title">Share Your Review</h3>
               <button 
-                className="close-button"
+                className="footer-close-button"
                 onClick={handleCloseModal}
                 aria-label="Close modal"
               >
@@ -179,16 +197,16 @@ const Footer = () => {
               </button>
             </div>
             
-            <div className="review-form">
+            <div className="footer-review-form">
               {/* Rating Stars */}
-              <div className="rating-section">
-                <div className="form-label">Rate your experience:</div>
-                <div className="stars-container">
+              <div className="footer-rating-section">
+                <div className="footer-form-label">Rate your experience:</div>
+                <div className="footer-stars-container">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
                       key={star}
                       size={24}
-                      className="star"
+                      className="footer-star"
                       style={{
                         fill: star <= rating ? '#ffd700' : 'transparent',
                         color: star <= rating ? '#ffd700' : '#ccc'
@@ -200,69 +218,69 @@ const Footer = () => {
               </div>
 
               {/* Form Fields */}
-              <div className="form-group">
-                <div className="form-label">Name *</div>
+              <div className="footer-form-group">
+                <div className="footer-form-label">Name *</div>
                 <input
                   type="text"
                   name="name"
                   value={reviewData.name}
                   onChange={handleInputChange}
-                  className="form-input"
+                  className="footer-form-input"
                   required
                   placeholder="Enter your full name"
                 />
               </div>
 
-              <div className="form-group">
-                <div className="form-label">Email *</div>
+              <div className="footer-form-group">
+                <div className="footer-form-label">Email *</div>
                 <input
                   type="email"
                   name="email"
                   value={reviewData.email}
                   onChange={handleInputChange}
-                  className="form-input"
+                  className="footer-form-input"
                   required
                   placeholder="Enter your email address"
                 />
               </div>
 
-              <div className="form-group">
-                <div className="form-label">Location</div>
+              <div className="footer-form-group">
+                <div className="footer-form-label">Location</div>
                 <input
                   type="text"
                   name="location"
                   value={reviewData.location}
                   onChange={handleInputChange}
-                  className="form-input"
+                  className="footer-form-input"
                   placeholder="City, Country"
                 />
               </div>
 
-              <div className="form-group">
-                <div className="form-label">Your Review *</div>
+              <div className="footer-form-group">
+                <div className="footer-form-label">Your Review *</div>
                 <textarea
                   name="review"
                   value={reviewData.review}
                   onChange={handleInputChange}
-                  className="form-textarea"
+                  className="footer-form-textarea"
                   rows={4}
                   required
                   placeholder="Share your experience with Earnify..."
                 />
               </div>
 
-              <div className="form-buttons">
+              <div className="footer-form-buttons">
                 <button
                   type="button"
                   onClick={handleCloseModal}
-                  className="cancel-button"
+                  className="footer-cancel-button"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
                   onClick={handleSubmitReview}
-                  className={`submit-button ${rating === 0 ? 'disabled' : ''}`}
+                  className={`footer-submit-button ${rating === 0 ? 'disabled' : ''}`}
                   disabled={rating === 0 || !reviewData.name || !reviewData.email || !reviewData.review}
                 >
                   Submit Review

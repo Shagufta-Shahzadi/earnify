@@ -1,14 +1,14 @@
-/* New Modern Homepage Styles */
+/* Homepage Specific Modern Styles */
 
 /* Override base styles for new design */
-.earnify-home-page.new-design {
+.homepage-earnify-container.homepage-new-design {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #ffffff;
   min-height: 100vh;
 }
 
 /* Modern Hero Section */
-.modern-hero-section {
+.homepage-modern-hero-section {
   background: #ffffff;
   min-height: 80vh;
   display: flex;
@@ -19,7 +19,7 @@
 }
 
 /* Hero Animations */
-@keyframes fadeInUp {
+@keyframes homepage-fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes fadeInRight {
+@keyframes homepage-fadeInRight {
   from {
     opacity: 0;
     transform: translateX(30px);
@@ -41,8 +41,7 @@
   }
 }
 
-
-@keyframes pulse {
+@keyframes homepage-pulse {
   0%, 100% {
     transform: scale(1);
   }
@@ -51,7 +50,7 @@
   }
 }
 
-@keyframes slideInLeft {
+@keyframes homepage-slideInLeft {
   from {
     opacity: 0;
     transform: translateX(-50px);
@@ -63,7 +62,7 @@
 }
 
 /* Add background animation elements */
-.modern-hero-section::before {
+.homepage-modern-hero-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -73,117 +72,124 @@
   background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
   z-index: 1;
-  animation: float 6s ease-in-out infinite;
+  animation: homepage-float 6s ease-in-out infinite;
 }
 
-.hero-container {
+@keyframes homepage-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.homepage-hero-container {
   position: relative;
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
   width: 100%;
-  /* Remove the fixed margin-left that's causing issues */
-  /* margin-left: 100px; */
 }
 
 /* Improve mobile responsiveness */
 @media (max-width: 768px) {
-  .modern-hero-section {
+  .homepage-modern-hero-section {
     padding: 20px 0 10px; /* Adjusted padding */
     min-height: auto; /* Allow natural height */
   }
 
-  .hero-container {
+  .homepage-hero-container {
     padding: 0 20px;
   }
 
-  .hero-content {
+  .homepage-hero-content {
     grid-template-columns: 1fr; /* Change to single column layout */
     gap: 30px;
     text-align: center;
   }
 
-  .hero-left {
+  .homepage-hero-left {
     order: 1; /* Content first */
   }
 
-  .hero-right {
+  .homepage-hero-right {
     order: 2; /* Image second */
   }
 
-  .hero-title {
+  .homepage-hero-title {
     font-size: 30px;
     margin-bottom: 15px;
   }
 
-  .hero-description {
-    font-size: 5px;
+  .homepage-hero-description {
+    font-size: 15px;
     margin-bottom: 25px;
     max-width: 100%;
   }
 
-  .download-buttons {
+  .homepage-download-buttons {
     justify-content: center;
     flex-wrap: wrap;
   }
 
   /* Hero image adjustments */
-  .hero-image-container {
+  .homepage-hero-image-container {
     height: 250px;
   }
 }
 
-.hero-content {
+.homepage-hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
-.hero-left {
+.homepage-hero-left {
   z-index: 2;
-  animation: slideInLeft 0.8s ease-out;
+  animation: homepage-slideInLeft 0.8s ease-out;
 }
 
-.hero-title {
+.homepage-hero-title {
   font-size: 45px;
   font-weight: 800;
   color: #2d3748;
   margin-bottom: 20px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
+  animation: homepage-fadeInUp 0.8s ease-out 0.2s both;
 }
 
-.hero-title .highlight {
+.homepage-hero-title .homepage-highlight {
   color: #ffffff;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: pulse 2s ease-in-out infinite;
+  animation: homepage-pulse 2s ease-in-out infinite;
 }
 
-.hero-description {
+.homepage-hero-description {
   font-size: 18px;
   color: #4a5568;
   margin-bottom: 40px;
   line-height: 1.6;
   font-weight: 400;
   max-width: 500px;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
+  animation: homepage-fadeInUp 0.8s ease-out 0.4s both;
 }
 
 /* Download Buttons */
-.download-buttons {
+.homepage-download-buttons {
   display: flex;
   gap: 15px;
   margin-top: 30px;
-  animation: fadeInUp 0.8s ease-out 0.6s both;
+  animation: homepage-fadeInUp 0.8s ease-out 0.6s both;
 }
 
-.download-btn {
+.homepage-download-btn {
   background: none;
   border: none;
   padding: 0;
@@ -192,13 +198,13 @@
   transition: all 0.3s ease;
 }
 
-.download-btn:focus {
+.homepage-download-btn:focus {
   outline: 2px solid #667eea;
   outline-offset: 4px;
   border-radius: 8px;
 }
 
-.download-btn img {
+.homepage-download-btn img {
   height: 40px;
   width: auto;
   border-radius: 8px;
@@ -206,28 +212,28 @@
   display: block;
 }
 
-.download-btn:hover {
+.homepage-download-btn:hover {
   transform: translateY(-2px);
 }
 
-.download-btn:hover img {
+.homepage-download-btn:hover img {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.download-btn:active {
+.homepage-download-btn:active {
   transform: translateY(0);
 }
 
 /* Hero Right Side */
-.hero-right {
+.homepage-hero-right {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInRight 0.8s ease-out 0.3s both;
+  animation: homepage-fadeInRight 0.8s ease-out 0.3s both;
 }
 
-.hero-image-container {
+.homepage-hero-image-container {
   position: relative;
   width: 100%;
   height: 450px;
@@ -236,7 +242,7 @@
   align-items: center;
 }
 
-.main-hero-image {
+.homepage-main-hero-image {
   width: 100%;
   height: 100%;
   display: flex;
@@ -247,7 +253,7 @@
 }
 
 /* Remove float animation from hero image */
-.hero-character-img {
+.homepage-hero-character-img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -255,7 +261,7 @@
   transition: transform 0.3s ease;
 }
 
-.hero-character-img:hover {
+.homepage-hero-character-img:hover {
   transform: scale(1.05);
 }
 
@@ -263,15 +269,15 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .hero-content {
+  .homepage-hero-content {
     gap: 50px;
   }
 
-  .hero-title {
+  .homepage-hero-title {
     font-size: 42px;
   }
 
-  .hero-description {
+  .homepage-hero-description {
     font-size: 16px;
   }
 }
@@ -279,90 +285,90 @@
 /* Mobile */
 @media (max-width: 768px) {
   /* Hero section adjustments - maintain left-right layout */
-  .modern-hero-section {
+  .homepage-modern-hero-section {
     padding: 100px 0 30px; /* Reduced padding */
     min-height: auto; /* Remove fixed height */
     margin-top: 0; /* Ensure it's at the top */
   }
 
-  .hero-container {
+  .homepage-hero-container {
     padding: 0 20px;
   }
 
-  .hero-content {
+  .homepage-hero-content {
     grid-template-columns: 1fr 1fr; /* Keep the left-right layout */
     gap: 20px;
     text-align: left;
   }
 
-  .hero-left {
+  .homepage-hero-left {
     order: 1; /* Keep on left side */
   }
 
-  .hero-right {
+  .homepage-hero-right {
     order: 2; /* Keep on right side */
   }
 
-  .hero-title {
+  .homepage-hero-title {
     font-size: 25px;
     margin-bottom: 15px;
   }
 
-  .hero-description {
-    font-size: 8px;
+  .homepage-hero-description {
+    font-size: 12px;
     margin-bottom: 25px;
     max-width: 100%;
   }
 
-  .download-buttons {
+  .homepage-download-buttons {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
 
-  .download-btn img {
+  .homepage-download-btn img {
     height: 45px;
   }
 
   /* Hero image adjustments */
-  .hero-image-container {
+  .homepage-hero-image-container {
     height: 200px;
   }
   
   /* Remove float animation from hero image */
-  .hero-character-img {
+  .homepage-hero-character-img {
     animation: none;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
-  .hero-container {
+  .homepage-hero-container {
     padding: 0 15px;
   }
   
   /* Maintain left-right layout but with smaller text */
-  .hero-content {
+  .homepage-hero-content {
     gap: 15px;
   }
 
-  .hero-title {
+  .homepage-hero-title {
     font-size: 22px;
   }
 
-  .hero-description {
+  .homepage-hero-description {
     font-size: 13px;
     margin-bottom: 20px;
   }
 
-  .download-buttons {
+  .homepage-download-buttons {
     gap: 10px;
   }
 
-  .download-btn img {
+  .homepage-download-btn img {
     height: 38px;
   }
 
-  .hero-image-container {
+  .homepage-hero-image-container {
     height: 220px;
   }
 }
@@ -370,83 +376,84 @@
 /* Extra Small Mobile */
 @media (max-width: 380px) {
   /* For very small screens, switch to stacked layout */
-  .hero-content {
+  .homepage-hero-content {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-left {
+  .homepage-hero-left {
     order: 2;
   }
 
-  .hero-right {
+  .homepage-hero-right {
     order: 1;
   }
   
-  .download-buttons {
+  .homepage-download-buttons {
     justify-content: center;
   }
   
-  .hero-title {
+  .homepage-hero-title {
     font-size: 24px;
   }
 
-  .hero-description {
+  .homepage-hero-description {
     font-size: 13px;
   }
 
-  .download-btn img {
+  .homepage-download-btn img {
     height: 35px;
   }
   
-  .hero-image-container {
+  .homepage-hero-image-container {
     height: 200px;
   }
 }
 
 /* Landscape orientation adjustments */
 @media (max-width: 768px) and (orientation: landscape) {
-  .modern-hero-section {
+  .homepage-modern-hero-section {
     padding: 55px 0 20px; /* Reduced */
   }
 
-  .hero-content {
+  .homepage-hero-content {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     align-items: center;
   }
 
-  .hero-left {
+  .homepage-hero-left {
     order: 1;
   }
 
-  .hero-right {
+  .homepage-hero-right {
     order: 2;
   }
 
-  .hero-title {
+  .homepage-hero-title {
     font-size: 30px;
   }
 
-  .hero-image-container {
+  .homepage-hero-image-container {
     height: 250px;
   }
 }
+
 /* Make left side content smaller */
 @media (max-width: 768px) {
-  .hero-title {
+  .homepage-hero-title {
     font-size: 20px; /* Reduced from 25px */
     margin-bottom: 10px;
   }
 
-  .hero-description {
+  .homepage-hero-description {
     font-size: 12px; /* Reduced from previous size */
     margin-bottom: 15px;
     max-width: 100%;
   }
 
   /* Make buttons smaller and arrange in one row */
-  .download-buttons {
+  .homepage-download-buttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -454,23 +461,23 @@
     margin-top: 15px;
   }
 
-  .download-btn img {
+  .homepage-download-btn img {
     height: 20px; /* Smaller button size */
   }
 }
 
 /* Extra small devices */
 @media (max-width: 480px) {
-  .hero-title {
+  .homepage-hero-title {
     font-size: 18px;
   }
 
-  .hero-description {
+  .homepage-hero-description {
     font-size: 10px;
     margin-bottom: 12px;
   }
 
-  .download-btn img {
+  .homepage-download-btn img {
     height: 28px; /* Even smaller for very small screens */
   }
 }

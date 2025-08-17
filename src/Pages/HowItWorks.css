@@ -1,0 +1,1292 @@
+/* HowItWorks.css - Unique Classes with HIW Prefix */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hiw-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+.hiw-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============ HERO SECTION WITH BACKGROUND IMAGE ============ */
+.hiw-hero-section {
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycG9yYXRlfGVufDB8fDB8fHww');
+  background-size: cover;
+  background-position: cover;
+  background-attachment: fixed;
+  color: white;
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+}
+
+.hiw-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(31, 41, 55, 0.8) 100%);
+  z-index: 1;
+}
+
+.hiw-hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(16,185,129,0.3)"/><circle cx="75" cy="75" r="3" fill="rgba(16,185,129,0.2)"/><circle cx="90" cy="20" r="1" fill="rgba(16,185,129,0.4)"/></svg>');
+  animation: hiwFloat 15s linear infinite;
+}
+
+@keyframes hiwFloat {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(100px); }
+}
+
+.hiw-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-hero-content {
+  margin-bottom: 60px;
+}
+
+.hiw-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-highlight {
+  background: linear-gradient(45deg, #10b981, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.hiw-hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hiw-stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.205);
+  padding: 15px 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hiw-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ============ SECTION HEADERS ============ */
+.hiw-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hiw-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.hiw-section-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============ STEPS SECTION - SMALLER CARDS IN ONE ROW ============ */
+.hiw-steps-section {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.hiw-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.hiw-step-card {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.hiw-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.hiw-step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: #10b981;
+}
+
+.hiw-step-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hiw-step-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.hiw-step-green { background: linear-gradient(135deg, #10b981, #059669); }
+.hiw-step-gold { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.hiw-step-purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+.hiw-step-number {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f2937;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.hiw-step-icon-symbol {
+  font-size: 1.5rem;
+}
+
+.hiw-step-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.hiw-step-description {
+  color: #6b7280;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* ============ TASK TYPES SECTION - SMALLER CARDS ============ */
+.hiw-task-types-section {
+  padding: 100px 0;
+}
+
+.hiw-task-types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hiw-task-type-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(37, 37, 37, 0.171);
+  border: 2px solid #f1f5f9;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex; /* Add flexbox */
+  flex-direction: column; /* Stack items vertically */
+  height: 100%; /* Ensure all cards have same height */
+}
+
+.hiw-task-type-card:hover {
+  border-color: #10b981;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.1);
+  transform: translateY(-5px);
+}
+
+.hiw-task-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 15px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.hiw-task-info {
+  text-align: center;
+  flex-grow: 1; /* This will take up available space */
+  display: flex;
+  flex-direction: column;
+}
+
+.hiw-task-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.hiw-task-description {
+  color: #6b7280;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-size: 0.85rem;
+  flex-grow: 1; /* This will push the details to bottom */
+}
+
+.hiw-task-details {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px; /* Add margin bottom to separate from button */
+}
+
+.hiw-task-reward, .hiw-task-time {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 15px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.hiw-task-reward {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+.hiw-start-earning-btn {
+  width: 70%;
+  margin: 0 auto; /* Center horizontally, no top margin */
+  background: linear-gradient(135deg, #00b862, #00b862);
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.hiw-start-earning-btn:hover {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+}
+
+/* ============ COMPACT EARNING CALCULATOR SECTION ============ */
+.hiw-calculator-section {
+  padding: 50px 0;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.301) 0%, rgba(55, 65, 81, 0.233) 100%),
+              url('https://www.cogencyglobal.co.uk/wp-content/uploads/2025/06/Untitled-design-21.webp') center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hiw-calculator-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(55, 65, 81, 0.6) 100%);
+  z-index: 1;
+}
+
+.hiw-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-calculator-section .hiw-section-header {
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-calculator-section .hiw-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-calculator-section .hiw-section-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-earning-calculator-compact {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 10px 20px;
+margin-top: -20px;
+margin-bottom: 20px;
+ margin-left: 90px;
+  max-width: 1000px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-earning-calculator-compact h3 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-calculator-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+
+}
+
+.hiw-calc-compact-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.hiw-calc-compact-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.hiw-calc-compact-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffd700;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-calc-compact-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-calc-compact-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-calc-compact-total {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.hiw-calc-compact-total:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.hiw-total-coins {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffd700;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-total-money {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Alternative background images - you can choose any of these */
+
+/* Option 1: Technology/Business theme */
+/*
+.hiw-calculator-section {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(55, 65, 81, 0.85) 100%),
+              url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+}
+*/
+
+/* Option 2: Money/Finance theme */
+/*
+.hiw-calculator-section {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(55, 65, 81, 0.85) 100%),
+              url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+}
+*/
+
+/* Option 3: Abstract geometric */
+/*
+.hiw-calculator-section {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(55, 65, 81, 0.85) 100%),
+              url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+}
+*/
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hiw-calculator-section {
+    padding: 60px 0;
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+  
+  .hiw-earning-calculator-compact {
+    padding: 30px 20px;
+    margin: 0 20px;
+  }
+  
+  .hiw-calculator-section .hiw-section-header {
+    margin-bottom: 30px;
+  }
+  
+  .hiw-calculator-section .hiw-section-title {
+    font-size: 2rem;
+  }
+  
+  .hiw-calculator-section .hiw-section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hiw-calculator-compact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+  
+  .hiw-calc-compact-item {
+    padding: 15px;
+  }
+  
+  .hiw-calc-compact-number {
+    font-size: 1.5rem;
+  }
+  
+  .hiw-calc-compact-label {
+    font-size: 0.8rem;
+  }
+  
+  .hiw-calc-compact-value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw-calculator-section {
+    padding: 40px 0;
+  }
+  
+  .hiw-earning-calculator-compact {
+    padding: 25px 15px;
+    margin: 0 15px;
+  }
+  
+  .hiw-calculator-section .hiw-section-header {
+    margin-bottom: 20px;
+  }
+  
+  .hiw-calculator-section .hiw-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .hiw-calculator-section .hiw-section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .hiw-calculator-compact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+  }
+  
+  .hiw-calc-compact-item {
+    padding: 12px;
+  }
+  
+  .hiw-calc-compact-total {
+    padding: 20px;
+  }
+  
+  .hiw-total-coins {
+    font-size: 1.3rem;
+  }
+  
+  .hiw-total-money {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============ REQUIREMENTS SECTION ============ */
+.hiw-requirements-section {
+  padding: 60px 0; /* Reduced from 100px */
+  background: #f8fafc;
+  position: relative;
+}
+
+.hiw-requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 40px; /* Reduced from 80px 60px */
+  max-width: 1000px; /* Reduced from 1200px */
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hiw-requirement-item {
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Dotted line connecting first row items (1-2, 2-3) at heading level */
+.hiw-requirement-item:nth-child(1)::after,
+.hiw-requirement-item:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  top: 85px; /* Adjusted for smaller icons (60px + 20px + half heading) */
+  left: calc(100% + 5px); /* Reduced spacing */
+  width: calc(40px - 10px); /* Smaller line width */
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #000000 0,
+    #000000 4px, /* Smaller dots */
+    transparent 4px,
+    transparent 8px
+  );
+  z-index: 1;
+}
+
+/* Dotted line connecting second row items (4-5, 5-6) at heading level */
+.hiw-requirement-item:nth-child(4)::after,
+.hiw-requirement-item:nth-child(5)::after {
+  content: '';
+  position: absolute;
+  top: 85px;
+  left: calc(100% + 5px);
+  width: calc(40px - 10px);
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #000000 0,
+    #000000 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  z-index: 1;
+}
+
+.hiw-requirement-item:hover {
+  transform: translateY(-3px); /* Reduced hover effect */
+}
+
+.hiw-req-icon {
+  width: 60px; /* Reduced from 80px */
+  height: 60px;
+  margin: 0 auto 20px; /* Reduced margin */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Smaller shadow */
+}
+
+.hiw-requirement-item:hover .hiw-req-icon {
+  transform: scale(1.05); /* Smaller scale */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hiw-req-icon .icon-emoji {
+  font-size: 1.8rem; /* Reduced from 2.2rem */
+}
+
+/* Different gradient colors for each item */
+.hiw-requirement-item:nth-child(1) .hiw-req-icon {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.hiw-requirement-item:nth-child(2) .hiw-req-icon {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.hiw-requirement-item:nth-child(3) .hiw-req-icon {
+  background: linear-gradient(135deg, #ffd89b, #19547b);
+}
+
+.hiw-requirement-item:nth-child(4) .hiw-req-icon {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.hiw-requirement-item:nth-child(5) .hiw-req-icon {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.hiw-requirement-item:nth-child(6) .hiw-req-icon {
+  background: linear-gradient(135deg, #fa709a, #fee140);
+}
+
+.hiw-requirement-item h4 {
+  font-size: 1.1rem; /* Reduced from 1.25rem */
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px; /* Reduced margin */
+  line-height: 1.2;
+  height: 26px; /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-requirement-item p {
+  color: #6b7280;
+  font-size: 0.8rem; /* Reduced from 0.9rem */
+  line-height: 1.4;
+  margin: 0;
+  max-width: 220px; /* Reduced width */
+  margin: 0 auto;
+}
+
+/* Section header adjustments */
+.hiw-section-header {
+  margin-bottom: 40px; /* Reduced from default */
+}
+
+.hiw-section-title {
+  font-size: 2.2rem; /* Smaller title */
+  margin-bottom: 10px;
+}
+
+.hiw-section-subtitle {
+  font-size: 1rem; /* Smaller subtitle */
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .hiw-requirements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+  
+  .hiw-requirement-item:nth-child(1)::after,
+  .hiw-requirement-item:nth-child(3)::after,
+  .hiw-requirement-item:nth-child(5)::after {
+    width: calc(30px - 10px);
+  }
+  
+  .hiw-requirement-item:nth-child(2)::after,
+  .hiw-requirement-item:nth-child(4)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hiw-requirements-section {
+    padding: 40px 0; /* Even smaller on mobile */
+  }
+  
+  .hiw-requirements-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .hiw-requirement-item::after {
+    display: none !important;
+  }
+  
+  .hiw-req-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .hiw-req-icon .icon-emoji {
+    font-size: 1.5rem;
+  }
+  
+  .hiw-requirement-item h4 {
+    font-size: 1rem;
+    height: 22px;
+  }
+  
+  .hiw-requirement-item p {
+    font-size: 0.75rem;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw-requirements-section {
+    padding: 30px 0;
+  }
+  
+  .hiw-requirements-grid {
+    gap: 30px;
+    padding: 0 15px;
+  }
+}
+/* ============ FAQ SECTION ============ */
+.hiw-faq-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.hiw-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hiw-faq-item {
+  background: white;
+  border: 1px solid #8c8d8f;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.hiw-faq-item:hover {
+  border-color: #4299e1;
+  box-shadow: 0 5px 15px rgba(66, 153, 225, 0.1);
+}
+
+.hiw-faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 25px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: #2d3748;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.hiw-faq-question:hover {
+  background: #f8fafc;
+}
+
+.hiw-faq-plus {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #4299e1;
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-faq-plus.hiw-open {
+  transform: rotate(45deg);
+}
+
+.hiw-faq-answer {
+  padding: 0 25px 20px;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.hiw-faq-answer p {
+  color: #718096;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============ CTA SECTION ============ */
+.hiw-cta-section {
+  padding: 150px 0;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.301) 0%, rgba(55, 65, 81, 0.233) 100%),
+              url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hiw-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(55, 65, 81, 0.6) 100%);
+  z-index: 1;
+}
+
+.hiw-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-cta-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hiw-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hiw-btn-primary, .hiw-btn-secondary {
+  padding: 10px 50px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  backdrop-filter: blur(5px);
+}
+
+.hiw-btn-primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+  border: 2px solid transparent;
+}
+
+.hiw-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+.hiw-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.hiw-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Alternative background images - you can choose any of these */
+
+/* Option 1: Technology/Business theme */
+/* 
+background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(55, 65, 81, 0.85) 100%),
+            url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+*/
+
+/* Option 2: Money/Finance theme */
+/* 
+background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(55, 65, 81, 0.85) 100%),
+            url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+*/
+
+/* Option 3: Abstract geometric */
+/* 
+background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(55, 65, 81, 0.85) 100%),
+            url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+*/
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hiw-cta-section {
+    padding: 60px 0;
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+  
+  .hiw-cta-title {
+    font-size: 2rem;
+  }
+  
+  .hiw-cta-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .hiw-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .hiw-btn-primary, .hiw-btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw-cta-section {
+    padding: 40px 0;
+  }
+  
+  .hiw-cta-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .hiw-cta-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+}
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .hiw-container {
+    padding: 0 15px;
+  }
+
+  .hiw-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hiw-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hiw-hero-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hiw-section-title {
+    font-size: 2rem;
+  }
+
+  .hiw-section-subtitle {
+    font-size: 1rem;
+  }
+
+  .hiw-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hiw-step-card {
+    padding: 20px 12px;
+  }
+
+  .hiw-task-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .hiw-task-type-card {
+    padding: 15px;
+  }
+
+  .hiw-calculator-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hiw-earning-calculator {
+    padding: 30px 20px;
+  }
+
+  .hiw-requirements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hiw-faq-question {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .hiw-faq-answer {
+    padding: 0 20px 20px;
+  }
+
+  .hiw-cta-title {
+    font-size: 2rem;
+  }
+
+  .hiw-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hiw-btn-primary,
+  .hiw-btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw-hero-section {
+    background-attachment: scroll;
+    padding: 80px 0 60px;
+  }
+
+  .hiw-hero-title {
+    font-size: 2rem;
+  }
+
+  .hiw-section-title {
+    font-size: 1.8rem;
+  }
+
+  .hiw-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hiw-step-card {
+    padding: 20px 15px;
+  }
+
+  .hiw-task-types-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .hiw-task-type-card {
+    padding: 15px;
+  }
+
+  .hiw-earning-calculator {
+    padding: 20px 15px;
+  }
+
+  .hiw-requirements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hiw-requirement-item {
+    padding: 20px 15px;
+  }
+
+  .hiw-faq-question {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .hiw-cta-title {
+    font-size: 1.8rem;
+  }
+
+  .hiw-cta-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ============ TABLET RESPONSIVE (iPad etc.) ============ */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hiw-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .hiw-task-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hiw-requirements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* ============ LARGE TABLET RESPONSIVE ============ */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .hiw-steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .hiw-task-types-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .hiw-requirements-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+}
+
+/* ============ ANDROID MOBILE OPTIMIZATION ============ */
+@media (max-width: 414px) {
+  .hiw-hero-section {
+    padding: 70px 0 50px;
+    min-height: 500px;
+  }
+
+  .hiw-stat-item {
+    padding: 20px 12px;
+  }
+
+  .hiw-step-card {
+    padding: 18px 12px;
+  }
+
+  .hiw-step-title {
+    font-size: 1.1rem;
+  }
+
+  .hiw-step-description {
+    font-size: 0.85rem;
+  }
+
+  .hiw-task-type-card {
+    padding: 12px;
+  }
+
+  .hiw-task-title {
+    font-size: 1rem;
+  }
+
+  .hiw-task-description {
+    font-size: 0.8rem;
+  }
+
+  .hiw-earning-calculator {
+    padding: 15px 10px;
+  }
+
+  .hiw-earning-calculator h3 {
+    font-size: 1.5rem;
+  }
+}
